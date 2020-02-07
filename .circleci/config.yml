@@ -15,3 +15,13 @@ jobs:
       - run: wpr -stop .\wpr.etl
       - store_artifacts:
           path: .\wpr.etl
+
+      - run: |
+          For ($iter = 0; $iter -lt 200; $iter += 1) {
+            $obj = Start-Process -PassThru cmd.exe -ArgumentList "/k"
+
+            Start-Sleep -Milliseconds 100
+            If ($obj.ExitCode -ne $null) {
+              throw "Process invocation failed"
+            }
+          }
