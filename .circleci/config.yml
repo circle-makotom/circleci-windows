@@ -22,6 +22,6 @@ jobs:
 
             Start-Sleep -Milliseconds 100
             If ($obj.ExitCode -ne $null) {
-              throw "Process invocation failed"
+              throw "Process invocation failed at `$iter = $iter"
             }
           }
