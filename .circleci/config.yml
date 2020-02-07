@@ -15,4 +15,3 @@ jobs:
       - run: wpr -stop .\wpr.etl
       - store_artifacts:
           path: .\wpr.etl
-
