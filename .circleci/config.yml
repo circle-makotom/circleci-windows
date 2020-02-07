@@ -10,7 +10,7 @@ jobs:
       - run: whoami
       - run: wpr -start GeneralProfile -start CPU -start DiskIO -start FileIO
       - run: sleep 5
-      - run: Invoke-WebRequest https://makotom.net/env.php
+      - run: Invoke-RestMethod https://makotom.net/env.php
       - run: Start-Process cmd.exe -ArgumentList "/c","echo CircleCI"
       - run: wpr -stop .\wpr.etl
       - store_artifacts:
